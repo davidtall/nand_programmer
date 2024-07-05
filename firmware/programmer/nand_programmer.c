@@ -468,8 +468,8 @@ static int _np_cmd_nand_erase(np_prog_t *prog)
     skip_bb = erase_cmd->flags.skip_bb;
     inc_spare = erase_cmd->flags.inc_spare;
 
-    DEBUG_PRINT("Erase at 0x%" PRIx64 " 0x%" PRIx64 " bytes command\r\n", addr,
-        len);
+   /* DEBUG_PRINT("Erase at 0x%" PRIx64 " 0x%" PRIx64 " bytes command\r\n", addr,
+        len);*/
 
     pages_in_block = prog->chip_info.block_size / prog->chip_info.page_size;
 
@@ -716,8 +716,8 @@ static int np_nand_write(np_prog_t *prog)
         while (prog->nand_wr_in_progress);
     }
 
-    DEBUG_PRINT("NAND write at 0x%" PRIx64 " %lu bytes\r\n", prog->addr,
-        prog->page_size);
+    /*DEBUG_PRINT("NAND write at 0x%" PRIx64 " %lu bytes\r\n", prog->addr,
+        prog->page_size);*/
 
     hal[prog->hal]->write_page_async(prog->page.buf, prog->page.page,
         prog->page_size);
@@ -915,8 +915,8 @@ static int _np_cmd_nand_read(np_prog_t *prog)
     skip_bb = read_cmd->flags.skip_bb;
     inc_spare = read_cmd->flags.inc_spare;
 
-    DEBUG_PRINT("Read at 0x%" PRIx64 " 0x%" PRIx64 " bytes command\r\n", addr,
-        len);
+    /*DEBUG_PRINT("Read at 0x%" PRIx64 " 0x%" PRIx64 " bytes command\r\n", addr,
+        len);*/
 
     if (inc_spare)
     {
