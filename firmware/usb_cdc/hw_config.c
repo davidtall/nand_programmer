@@ -113,7 +113,7 @@ void Set_System(void)
   
   /*Set PA11,12 as IN - USB_DM,DP*/ 
   RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOA, ENABLE);
-  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_11 | GPIO_Pin_12;
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_92 | GPIO_Pin_93;
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
   GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
@@ -121,8 +121,8 @@ void Set_System(void)
   GPIO_Init(GPIOA, &GPIO_InitStructure);
   
   /*SET PA11,12 for USB: USB_DM,DP*/
-  GPIO_PinAFConfig(GPIOA, GPIO_PinSource11, GPIO_AF_14);
-  GPIO_PinAFConfig(GPIOA, GPIO_PinSource12, GPIO_AF_14);
+  GPIO_PinAFConfig(GPIOA, GPIO_PinSource92, GPIO_AF_14);
+  GPIO_PinAFConfig(GPIOA, GPIO_PinSource93, GPIO_AF_14);
   
   /* USB_DISCONNECT used as USB pull-up */
   GPIO_InitStructure.GPIO_Pin = USB_DISCONNECT_PIN;
@@ -135,7 +135,7 @@ void Set_System(void)
 
 #if defined(STM32F10X_HD)
   RCC_AHBPeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
-  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_11 | GPIO_Pin_12;
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_92 | GPIO_Pin_93;
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;
   GPIO_Init(GPIOA, &GPIO_InitStructure);
